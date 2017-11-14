@@ -3,7 +3,6 @@ package smartcommunity.hwpeng.com.smartcommunity.login.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +18,7 @@ import smartcommunity.hwpeng.com.smartcommunity.base.LoginSuccessActivity;
 import smartcommunity.hwpeng.com.smartcommunity.login.presenter.LoginIPresenter;
 import smartcommunity.hwpeng.com.smartcommunity.login.presenter.LoginPresenterImpl;
 import smartcommunity.hwpeng.com.smartcommunity.register.view.RegisterActivity;
-import smartcommunity.hwpeng.com.smartcommunity.register.view.RegisterIView;
-import smartcommunity.hwpeng.com.smartcommunity.splash.view.SplashActivity;
+import smartcommunity.hwpeng.com.smartcommunity.utils.EditTextCheckNull;
 
 /**
  * Created by hwpeng on 2017/9/25.
@@ -29,9 +27,10 @@ import smartcommunity.hwpeng.com.smartcommunity.splash.view.SplashActivity;
 public class LoginActivity extends BaseActivity implements LoginIView, View.OnClickListener {
     private LoginIPresenter loginIPresenter;
     private CircleImageView loginIcon;
-    private EditText usermane;
+    private EditText username;
     private EditText password;
     private TextView forgetPassword;
+
     private TextView newUser;
     private Button login;
 
@@ -47,7 +46,7 @@ public class LoginActivity extends BaseActivity implements LoginIView, View.OnCl
             LoginActivity.this.finish();
         }
         loginIcon = (CircleImageView) findViewById(R.id.login_icon);
-        usermane = (EditText) findViewById(R.id.login_username);
+        username = (EditText) findViewById(R.id.login_username);
         password = (EditText) findViewById(R.id.login_password);
         forgetPassword = (TextView) findViewById(R.id.forget_password);
         newUser = (TextView) findViewById(R.id.new_user);
@@ -58,7 +57,7 @@ public class LoginActivity extends BaseActivity implements LoginIView, View.OnCl
         if(registerIntent != null) {
             String registerUsername = registerIntent.getStringExtra("username");
             String registerPassword = registerIntent.getStringExtra("password");
-            usermane.setText(registerUsername);
+            username.setText(registerUsername);
             password.setText(registerPassword);
         }
         forgetPassword.setOnClickListener(this);
@@ -78,7 +77,12 @@ public class LoginActivity extends BaseActivity implements LoginIView, View.OnCl
                 finish();
                 break;
             case R.id.login_button:
-                loginIPresenter.login(usermane.getText().toString(),password.getText().toString());
+                if(!EditTextCheckNull.isNull(username) && !EditTextCheckNull.isNull(password)){
+                    loginIPresenter.login(username.getText().toString(),password.getText().toString());
+                }else{
+                    Toast.makeText(LoginActivity.this, "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
             default:
                 break;

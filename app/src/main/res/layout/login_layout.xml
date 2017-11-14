@@ -1,81 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="@color/avoscloud_feedback_white"
+    >
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/login_icon"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
-        android:src="@mipmap/login_icon" />
-
-    <EditText
-        android:id="@+id/login_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:hint="@string/login_name"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:textColorHint="#000"
-        android:textColor="#000"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="30dp"
-        android:hint="@string/login_password"
-        android:textColorHint="#000"
-        android:textColor="#000"
-        android:textSize="15sp"
-        android:inputType="textPassword"/>
+        android:layout_marginTop="100dp"
+        android:src="@mipmap/user_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp" />
 
     <Button
         android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
-        android:background="@color/avoscloud_blue"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_background"
+        android:fitsSystemWindows="true"
         android:text="登录"
-        android:textSize="20sp"
-        android:textColor="#fff" />
+        android:textColor="@color/avoscloud_feedback_white"
+        android:textSize="@dimen/login_text_size"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/forget_password"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="忘记密码"
+        android:textColor="@color/loginButtonDown"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        android:layout_marginStart="32dp" />
 
-        <TextView
-            android:id="@+id/forget_password"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="忘记密码"
-            android:textColor="@color/avoscloud_feedback_thread_actionbar_blue"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="192dp" />
 
-        <TextView
-            android:id="@+id/new_user"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="新用户"
-            android:textColor="@color/avoscloud_feedback_thread_actionbar_blue"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/new_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:text="新用户"
+        android:textColor="@color/loginButtonDown"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        android:layout_marginEnd="32dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:textColorHint="@color/hint_color"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_icon">
+
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户名"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/hint_color" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="@color/hint_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503">
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@android:color/black" />
+    </android.support.design.widget.TextInputLayout>
+</android.support.constraint.ConstraintLayout>

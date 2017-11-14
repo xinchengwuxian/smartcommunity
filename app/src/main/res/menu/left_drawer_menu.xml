@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/news"
+            android:icon="@drawable/ic_description_grey_500_36dp"
+            android:title="新闻资讯"
+            />
+
+        <item
+            android:id="@+id/picture"
+            android:icon="@drawable/ic_picture_in_picture_grey_500_36dp"
+            android:title="图片浏览"/>
+
+        <item
+            android:id="@+id/video"
+            android:icon="@drawable/ic_ondemand_video_grey_500_36dp"
+            android:title="视频浏览"/>
+
+        <item
+            android:id="@+id/chat"
+            android:icon="@drawable/ic_chat_grey_500_36dp"
+            android:title="聊天休闲"/>
+
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_settings_grey_500_36dp"
+            android:title="设置"/>
+    </group>
+
+</menu>
