@@ -3,11 +3,11 @@
     <group android:checkableBehavior="single">
 
 
-        <item
-            android:id="@+id/news"
-            android:icon="@drawable/ic_description_grey_500_36dp"
-            android:title="新闻资讯"
-            />
+        <!--<item-->
+            <!--android:id="@+id/news"-->
+            <!--android:icon="@drawable/ic_description_grey_500_36dp"-->
+            <!--android:title="新闻资讯"-->
+            <!--/>-->
 
         <item
             android:id="@+id/picture"
@@ -24,6 +24,10 @@
             android:icon="@drawable/ic_chat_grey_500_36dp"
             android:title="聊天休闲"/>
 
+        <item
+            android:id="@+id/weather"
+            android:icon="@drawable/ic_settings_grey_500_36dp"
+            android:title="天气预报"/>
         <item
             android:id="@+id/setting"
             android:icon="@drawable/ic_settings_grey_500_36dp"

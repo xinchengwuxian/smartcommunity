@@ -5,11 +5,13 @@ import android.content.Context;
 
 import com.avos.avoscloud.AVOSCloud;
 
+import org.litepal.LitePalApplication;
+
 /**
  * Created by hwpeng on 2017/9/19.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends LitePalApplication {
     private static Context context;
 
     @Override

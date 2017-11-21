@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="weather" />
+
+    <version value="1" />
+
+    <list>
+        <mapping class="smartcommunity.hwpeng.com.smartcommunity.loginSuccess.weather.db.Province" />
+        <mapping class="smartcommunity.hwpeng.com.smartcommunity.loginSuccess.weather.db.City" />
+        <mapping class="smartcommunity.hwpeng.com.smartcommunity.loginSuccess.weather.db.County" />
+    </list>
+
+</litepal>

@@ -17,6 +17,7 @@ import smartcommunity.hwpeng.com.smartcommunity.base.BaseActivity;
 import smartcommunity.hwpeng.com.smartcommunity.base.LoginSuccessActivity;
 import smartcommunity.hwpeng.com.smartcommunity.login.presenter.LoginIPresenter;
 import smartcommunity.hwpeng.com.smartcommunity.login.presenter.LoginPresenterImpl;
+import smartcommunity.hwpeng.com.smartcommunity.loginSuccess.loginMainPager.view.LoginMainPagerActivity;
 import smartcommunity.hwpeng.com.smartcommunity.register.view.RegisterActivity;
 import smartcommunity.hwpeng.com.smartcommunity.utils.EditTextCheckNull;
 
@@ -42,7 +43,7 @@ public class LoginActivity extends BaseActivity implements LoginIView, View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
         if (AVUser.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, LoginSuccessActivity.class));
+            startActivity(new Intent(LoginActivity.this, LoginMainPagerActivity.class));
             LoginActivity.this.finish();
         }
         loginIcon = (CircleImageView) findViewById(R.id.login_icon);
@@ -93,7 +94,7 @@ public class LoginActivity extends BaseActivity implements LoginIView, View.OnCl
     @Override
     public void onLoginSuccess() {
         startActivity(new Intent(LoginActivity.this,
-                LoginSuccessActivity.class));
+                LoginMainPagerActivity.class));
         finish();
     }
 

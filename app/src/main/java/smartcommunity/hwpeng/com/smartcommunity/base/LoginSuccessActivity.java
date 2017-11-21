@@ -26,7 +26,7 @@ import smartcommunity.hwpeng.com.smartcommunity.login.view.LoginActivity;
  * Created by hwpeng on 2017/9/29.
  */
 
-public class LoginSuccessActivity extends BaseActivity {
+public class LoginSuccessActivity extends BaseActivity implements View.OnClickListener{
 
     private Button logout;
     private Toolbar toolBar;
@@ -46,16 +46,9 @@ public class LoginSuccessActivity extends BaseActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_reorder_white_36dp);
         }
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AVUser.getCurrentUser().logOut();
-                startActivity(new Intent(LoginSuccessActivity.this, LoginActivity.class));
-                LoginSuccessActivity.this.finish();
-            }
-        });
+        logout.setOnClickListener(this);
 
-        navigationView.setCheckedItem(R.id.news);
+//        navigationView.setCheckedItem(R.id.news);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -73,6 +66,19 @@ public class LoginSuccessActivity extends BaseActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.login_out:
+                AVUser.getCurrentUser().logOut();
+                startActivity(new Intent(LoginSuccessActivity.this, LoginActivity.class));
+                LoginSuccessActivity.this.finish();
+                break;
+            default:
+                break;
+        }
     }
 
 

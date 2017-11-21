@@ -8,28 +8,9 @@
     android:background="#fff">
 
     <FrameLayout
+        android:id="@+id/login_success_main_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
-
-           <android.support.v7.widget.Toolbar
-               android:id="@+id/login_success_toolbar"
-               android:layout_width="match_parent"
-               android:layout_height="?attr/actionBarSize"
-               android:background="?attr/colorPrimary"
-               android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-               app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-           <Button
-               android:id="@+id/login_out"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_centerInParent="true"
-               android:text="退出登陆"/>
-       </RelativeLayout>
 
     </FrameLayout>
 

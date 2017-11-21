@@ -46,11 +46,16 @@
         <activity android:name=".register.view.RegisterActivity"
             android:theme="@style/Theme.AppCompat">
         </activity>
-        <activity android:name=".base.LoginSuccessActivity">
+        <activity android:name=".loginSuccess.loginMainPager.view.LoginMainPagerActivity">
+        </activity>
+        <activity android:name=".loginSuccess.weather.view.WeatherActivity">
+        </activity>
+        <activity android:name=".loginSuccess.weather.view.WeatherMainActivity">
         </activity>
 
     </application>
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
